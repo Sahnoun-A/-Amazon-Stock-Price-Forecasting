@@ -1,0 +1,11 @@
+Flask==3.1.1
+joblib==1.4.2
+keras==3.6.0
+numpy==2.0.2
+pandas==2.3.1
+scikit_learn==1.6.1
+xgboost==3.0.2
+matplotlib
+seaborn
+statsmodels
+prophet

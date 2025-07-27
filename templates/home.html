@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Stock Price Forecast</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            margin: 10px 0 5px;
+            color: #34495e;
+        }
+
+        input[type="file"],
+        textarea,
+        input[type="submit"] {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            margin-top: 25px;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1d6fa5;
+        }
+
+        textarea {
+            width: 100%;
+            resize: vertical;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .radio-group input {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Amazon Stock - Forecast Next Week</h2>
+
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <label>Select Input Format:</label>
+            <div class="radio-group">
+                <input type="radio" name="input_format" value="file" checked> Upload CSV
+                <input type="radio" name="input_format" value="text"> Enter Text
+            </div>
+
+            <div id="file-input">
+                <label>Upload CSV file:</label>
+                <input type="file" name="file">
+            </div>
+
+            <div id="text-input" style="display:none;">
+                <label>Enter recent closing prices (one per line):</label>
+                <textarea name="textdata" rows="10" placeholder="e.g.\n132.45\n134.00\n131.78..."></textarea>
+            </div>
+
+            <input type="submit" value="Predict Prices">
+        </form>
+    </div>
+
+    <script>
+        const fileRadio = document.querySelector('input[value="file"]');
+        const textRadio = document.querySelector('input[value="text"]');
+        const fileInput = document.getElementById('file-input');
+        const textInput = document.getElementById('text-input');
+
+        fileRadio.addEventListener('change', () => {
+            fileInput.style.display = 'block';
+            textInput.style.display = 'none';
+        });
+
+        textRadio.addEventListener('change', () => {
+            fileInput.style.display = 'none';
+            textInput.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

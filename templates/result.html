@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecast Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        ol {
+            padding-left: 0;
+            list-style-position: inside;
+            font-size: 18px;
+            color: #34495e;
+            line-height: 1.8;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #1d6fa5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>A Trading Week Forecasted Closing Prices</h2>
+        <ol>
+            {% for price in prediction %}
+            <li>${{ price }}</li>
+            {% endfor %}
+        </ol>
+        <a href="/">← Back to Home</a>
+    </div>
+</body>
+</html>
+

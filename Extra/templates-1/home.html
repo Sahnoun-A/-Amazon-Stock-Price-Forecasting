@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Stock Price Predictor</title>
+</head>
+<body>
+    <h2>Amazon Stock Price Prediction</h2>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label><strong>Option 1: Upload CSV File</strong></label><br>
+        <input type="file" name="csv_file"><br><br>
+
+        <label><strong>Option 2: Paste Text Data</strong> (Date, Close, Volume):</label><br>
+        <textarea name="text_data" rows="12" cols="80" placeholder="2024-07-01, 180.12, 3500000"></textarea><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
+
