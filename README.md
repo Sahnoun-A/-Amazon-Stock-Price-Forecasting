@@ -46,6 +46,6 @@ simpler training and less data-requirement compared to LSTM
 - Flask app successfully deployed for real-time customer input and forcasting
 
 ## 9. Resources
-- 🗃 [**GitHub Repo**](https://github.com/Sahnoun-A/Customer-Clustering-And-Predicting-Behavior)
-- 📘 [**Kaggle Notebook**](https://www.kaggle.com/code/abdelkabirsahnoun/customer-clustering-and-predicting-behavior)
-- 🌐 [**Flask App Demo**](http://3.149.15.43:8080)
+- 🗃 [**GitHub Repo**](https://github.com/Sahnoun-A/-Amazon-Stock-Price-Forecasting)
+- 📘 [**Kaggle Notebook**](https://www.kaggle.com/code/abdelkabirsahnoun/amazon-stock-price-prediction)
+- 🌐 [**Flask App Demo**](http://18.189.247.217:8080)
